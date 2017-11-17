@@ -25,36 +25,15 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-autoconfigure -->
-	<!-- <dependency>
-    	<groupId>org.springframework.boot</groupId>
-    	<artifactId>spring-boot-autoconfigure</artifactId>
-    	<version>1.5.8.RELEASE</version>
-	</dependency> -->
-
-    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot -->
-	<!-- <dependency>
-    	<groupId>org.springframework.boot</groupId>
-    	<artifactId>spring-boot</artifactId>
-    	<version>1.5.8.RELEASE</version>
-	</dependency> -->
-
-    <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
-	<!-- <dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-web</artifactId>
-    	<version>5.0.1.RELEASE</version>
-	</dependency> -->
-	
+    
 	<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
     <dependency>
     	<groupId>org.springframework.boot</groupId>
     	<artifactId>spring-boot-starter-web</artifactId>
     	<version>1.5.8.RELEASE</version>
-	</dependency>
-	
-    
+	</dependency> 
   </dependencies>
+  
   <build>
   	<plugins>
   		<plugin>

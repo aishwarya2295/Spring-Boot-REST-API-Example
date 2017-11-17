@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/employee")
 public class EmployeeController {
-
+	
 	HashMap<Integer, Employee> empData = new HashMap<Integer, Employee>();
 
-	@RequestMapping(value = "/employee")
+	@RequestMapping(value = "/")
 	public HashMap<Integer, Employee> employees() {
 		Employee emp1 = new Employee();
 		Employee emp2 = new Employee();
@@ -22,22 +23,21 @@ public class EmployeeController {
 		emp1.setName("Aishwarya");
 		emp1.setDesignation("S/w Engineer");
 		empData.put(1, emp1);
-		System.out.println("id of 1nd :"+emp1.getId());;
 
 		emp2.setId(2);
 		emp2.setName("Aisha");
 		emp2.setDesignation("S/w Engineer");
 		empData.put(2, emp2);
-		System.out.println("id of 2nd :"+emp2.getId());
+
 		return empData;
 	}
 
-	@RequestMapping(value = "/employee/getAll", method = RequestMethod.GET)
+	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
 	public HashMap<Integer, Employee> getAllEmployees() {
 		return empData;
 	}
 
-	@RequestMapping(value = "/employee/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public Employee getEmployeeById(@PathVariable Integer id) throws Exception {
 		if (empData.containsKey(id)) {
 			return empData.get(id);
@@ -46,7 +46,7 @@ public class EmployeeController {
 		}
 	}
 
-	@RequestMapping(value = "/employee/add", method = RequestMethod.POST)
+	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public Employee addEmployee(@RequestBody Employee emp) throws Exception {
 		if (empData.containsKey(emp.getId())) {
 			throw new Exception("Employee Id:" + emp.getId() + "already exists");
@@ -56,7 +56,7 @@ public class EmployeeController {
 		return emp;
 	}
 
-	@RequestMapping(value = "/employee/update", method = RequestMethod.PUT)
+	@RequestMapping(value = "/update", method = RequestMethod.PUT)
 	public Employee updateEmployee(@RequestBody Employee emp) throws Exception {
 		if (empData.containsKey(emp.getId())) {
 			Employee empUp = empData.get(emp.getId());
@@ -70,7 +70,7 @@ public class EmployeeController {
 		}
 	}
 
-	@RequestMapping(value = "/employee/delete/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
 	public Employee deleteEmployee(@PathVariable Integer id) throws Exception{
 		if(empData.containsKey(id)){
 			Employee empDel = empData.get(id);
