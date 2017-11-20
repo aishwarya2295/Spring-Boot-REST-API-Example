@@ -65,7 +65,7 @@ public class EmployeeControllerTest {
 		Mockito.when(employeeService.updateEmployee(Mockito.any(Employee.class))).thenReturn(emp);
 		
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.put(
-				"/employees/").accept(MediaType.APPLICATION_JSON).content(employeeJson)
+				"/employees/1").accept(MediaType.APPLICATION_JSON).content(employeeJson)
 				.contentType(MediaType.APPLICATION_JSON);
 		
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();

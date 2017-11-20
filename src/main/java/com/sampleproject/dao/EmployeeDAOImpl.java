@@ -2,9 +2,8 @@ package com.sampleproject.dao;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-
+import javax.annotation.PostConstruct;
 import org.springframework.stereotype.Repository;
-
 import com.sampleproject.model.Employee;
 
 @Repository
@@ -12,7 +11,8 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 	
 	ArrayList<Employee> empData = new ArrayList<Employee>();
 	
-	public EmployeeDAOImpl(){
+	@PostConstruct
+	public void init(){
 		Employee emp1 = new Employee(1,"Aishwarya","Software Engineer");
 		
 		Employee emp2 = new Employee(2,"Vaibhav","Trainee");
