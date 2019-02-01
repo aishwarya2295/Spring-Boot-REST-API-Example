@@ -4,7 +4,8 @@ pipeline{
         stage('build'){
             steps{
               sh "mvn clean install"
-              sh "mvn spring-boot:run"
+              //sh "mvn spring-boot:run"
+              sh "mvn test"
             }
         }
     }
